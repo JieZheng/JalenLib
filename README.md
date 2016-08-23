@@ -17,7 +17,9 @@ JalenLib contians two parts: `HttpHelper` and `DataBinder`
 ###DataBinder
  - DataBinder
  
- > Bind any Object Data with a view. Support customized resolver.
+ > Bind any Object Data with a view. Support customized resolver. So far, only support TextView and ImageView for Drawable.
+ 
+ > Will support CheckBox, RadioButton, Switch, etc.
  
  > Will support view id customization by annotation in the near future.
  
