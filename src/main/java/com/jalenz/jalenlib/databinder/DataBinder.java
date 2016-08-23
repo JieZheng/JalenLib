@@ -30,10 +30,17 @@ public class DataBinder {
     HashMap<Integer, DataViewHolder> mDataViewMap = new HashMap<Integer, DataViewHolder>();
     HashSet<Integer> mInvalidResIds = new HashSet<Integer>();
 
+    /**
+     * DataBinder constructor
+     * @param cls class of Object Data
+     * @param layoutView View to bind
+     * @param resIdCls R.id.class
+     */
     public DataBinder(Class<?> cls, View layoutView, Class<?> resIdCls) {
         mCls = cls;
         mLayoutView = layoutView;
-
+        mResIdCls = resIdCls;
+        
         Field[] fields = cls.getDeclaredFields();
         for (Field f: fields) {
             int resId = getResId(f.getName());
@@ -45,6 +52,12 @@ public class DataBinder {
         }
     }
 
+    /**
+     * DataBinder constructor
+     * @param dataObj Object Data
+     * @param layoutView View to bind
+     * @param resIdCls R.id.class
+     */
     public DataBinder(Object dataObj, View layoutView, Class<?> resIdCls) {
         this(dataObj.getClass(), layoutView, resIdCls);
         bindData(dataObj);
