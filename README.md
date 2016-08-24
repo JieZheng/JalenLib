@@ -1,13 +1,11 @@
 # JalenLib
-JalenLib contians two parts: `HttpHelper` and `DataBinder`
+JalenLib contians 3 parts: `HttpHelper`, `DataBinder` and `Views`
 
 ###HttpHelper
 
  - HttpHelper
 
  - PageManager
-
- - JieLoadingLayout `for RecyclerView`
 
  - PageLoadingCoordinator
 
@@ -24,3 +22,8 @@ JalenLib contians two parts: `HttpHelper` and `DataBinder`
  > Will support view id customization by annotation in the near future.
  
  > Will support resolver attaching by annotation in the near future.
+
+###Views
+ - JieLoadingLayout `for RecyclerView`
+
+ - BottomBarBehavior
