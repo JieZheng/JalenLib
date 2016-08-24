@@ -6,25 +6,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import com.lidroid.xutils.util.LogUtils;
-
-import java.util.Calendar;
-import java.util.Date;
 
 
 public class ToastUtil {
     private static Toast toast = null;
     public static int LENGTH_LONG = Toast.LENGTH_LONG;
     private static int LENGTH_SHORT = Toast.LENGTH_SHORT;
-    private static Context context = null;
     private static long MIN_INTERVAL_BETWEEN_TWO_TOAST = 2000;
     private static long timeOfLastToast = 0;
 
     public static void TextToast(Context context, CharSequence text) {
         TextToast(context, text, LENGTH_SHORT);
     }
-
 
     /**
      * 普通文本消息提示
@@ -35,7 +29,6 @@ public class ToastUtil {
      */
     public static void TextToast(Context context, CharSequence text, int duration) {
         if (toast == null) {
-            ToastUtil.context = context;
             //创建一个Toast提示消息
             toast = Toast.makeText(context, text, duration);
             //设置Toast提示消息在屏幕上的位置
@@ -70,7 +63,6 @@ public class ToastUtil {
         }
 
         if (toast == null) {
-            ToastUtil.context = context;
             //创建一个Toast提示消息
             toast = Toast.makeText(context, text, duration);
             //设置Toast提示消息在屏幕上的位置
@@ -83,7 +75,6 @@ public class ToastUtil {
         toast.show();
     }
 
-
     /**
      * Show image toast
      *
@@ -93,16 +84,16 @@ public class ToastUtil {
      * @param duration
      */
     public static void ImageToast(Context context, int ImageResourceId, CharSequence text, int duration) {
-        toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        View toastView = toast.getView();
+        Toast imgToast = Toast.makeText(context, text, Toast.LENGTH_LONG);
+        imgToast.setGravity(Gravity.CENTER, 0, 0);
+        View toastView = imgToast.getView();
         ImageView img = new ImageView(context);
         img.setImageResource(ImageResourceId);
         LinearLayout ll = new LinearLayout(context);
         ll.addView(img);
         ll.addView(toastView);
-        toast.setView(ll);
-        toast.show();
+        imgToast.setView(ll);
+        imgToast.show();
     }
 
 }
