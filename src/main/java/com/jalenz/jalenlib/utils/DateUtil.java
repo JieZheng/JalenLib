@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 日期操作工具类.
+ * methods to manipulate date
  * 
  * @author
  */

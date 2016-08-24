@@ -3,22 +3,9 @@ package com.jalenz.jalenlib.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**   
-*    
-* 项目名称：sotaoapp   
-* 类名称：SpfHelper   
-* 类描述： 首选项数据操作类
-* 创建人：xgh  
-* 创建时间：2014-8-13 下午3:47:48   
-* 修改人：xgh  
-* 修改时间：2014-8-13 下午3:47:48   
-* 修改备注：   
-* @version V1.0   
-*    
-*/
 public class SpfHelper {
 	/**
-	 * 保存在手机里面的文件名
+	 * name of Spf
 	 */
 	private static final String FILE_NAME = "exmanager_data";
 	
@@ -89,7 +76,6 @@ public class SpfHelper {
 	/**
 	 * 清除数据
 	 * @param context
-	 * @param filename
 	 */
 	public static void clearData(Context context) {
 		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
